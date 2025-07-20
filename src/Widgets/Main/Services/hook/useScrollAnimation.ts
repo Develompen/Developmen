@@ -1,6 +1,6 @@
 import { useState, useEffect, type RefObject } from 'react';
 
-const useScrollAnimation = (ref: RefObject<HTMLElement>, threshold = 0.2) => {
+function useScrollAnimation(ref: RefObject<HTMLElement | null>, threshold: number = 0.2) {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {
@@ -24,6 +24,6 @@ const useScrollAnimation = (ref: RefObject<HTMLElement>, threshold = 0.2) => {
 	}, [ref, threshold]);
 
 	return isVisible;
-};
+}
 
 export default useScrollAnimation;
